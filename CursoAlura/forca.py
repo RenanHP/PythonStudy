@@ -13,7 +13,7 @@ with open('frutas.txt') as f:
     linhas = f.readlines()
 
 qtidade_palavras = len(linhas)
-palavra_secreta = linhas[random.randrange(0, qtidade_palavras)].strip().lower()
+palavra_secreta = linhas[random.randrange(0, qtidade_palavras)].strip().upper()
 print(palavra_secreta)
 
 # Quantidade de caracteres da palavra secreta
@@ -26,10 +26,10 @@ print("Bem vindo ao jogo da forca.")
 
 while (not Enforcado and not Acertou) :
     Index = 0
-    chute = input("Digite uma letra: ")
+    chute = input("Digite uma letra: ").upper()
     
     if chute in palavra_secreta:
-        chute = chute.lower().strip()
+        chute = chute.upper().strip()
         # Verificando se a letra já foi encontrada
         if chute in letras_acertadas:
                 print("Essa letra já foi econtrada.")
