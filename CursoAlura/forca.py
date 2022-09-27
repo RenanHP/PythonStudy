@@ -45,6 +45,7 @@ while (not Enforcado and not Acertou) :
         if "_" in letras_acertadas:
             continue
         else:
+            print("Você ganhou!")
             break
     # Condição para temrmino do jogo
     else:
