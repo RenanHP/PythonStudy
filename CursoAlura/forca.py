@@ -14,15 +14,12 @@ with open('frutas.txt') as f:
 
 qtidade_palavras = len(linhas)
 palavra_secreta = linhas[random.randrange(0, qtidade_palavras)].strip().upper()
-print(palavra_secreta)
 
 # Quantidade de caracteres da palavra secreta
-qtidade_caracteres = int(len(palavra_secreta))
-for i in range(qtidade_caracteres) :
-    letras_acertadas.append("_")
+letras_acertadas = ["_" for letra in palavra_secreta]
 
-print(letras_acertadas)
 print("Bem vindo ao jogo da forca.")
+print(letras_acertadas)
 
 while (not Enforcado and not Acertou) :
     Index = 0
