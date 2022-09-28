@@ -1,3 +1,10 @@
 Banana
 Melancia
 Abacaxi
+Morango
+Kiwi
+Caju
+Alface
+Tomate
+Limão
+Maça
