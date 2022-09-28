@@ -50,6 +50,5 @@ while (not Enforcado and not Acertou) :
         print("Você errou! Faltam {} chances.".format(6 - erros))
         if erros == 6:
             print("Você perdeu.")
+            print("A palavra era {}.".format(palavra_secreta))
             break
-            
-        
