@@ -42,11 +42,11 @@ while True:
         if (chute == numero_secreto):
             print("Acertou")
             if nivel == 1:
-                saldo_atual = aposta + aposta * 3
+                saldo_atual = saldo_atual + aposta * 2
             elif nivel == 2:
-                saldo_atual = aposta + aposta * 0.5
+                saldo_atual = saldo_atual + aposta * 0.3
             elif nivel == 3:
-                saldo_atual = aposta + aposta * 0.1
+                saldo_atual = saldo_atual + aposta * 0.1
             break
         elif (chute > numero_secreto):
             print("Seu chute foi maior que o número")
