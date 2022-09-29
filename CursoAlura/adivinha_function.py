@@ -8,6 +8,7 @@ def VerifyUser(nome, data):
     match = next((x for x in data if x["name"] == nome), None)
     if match == None:
         data.append({"name":nome, "saldo":1000}) 
+        print("Jogador adicionado, seu saldo é de 1000R$.")
 
 def GetSaldo (nome, data):
     match = next((x for x in data if x["name"] == nome), None)
@@ -15,6 +16,7 @@ def GetSaldo (nome, data):
     if match != None:
         resultado = match["saldo"]
     return resultado
+    
     
 def UpdateSaldo(nome, saldo, data):
     match = next((x for x in data if x["name"] == nome), None)
@@ -25,9 +27,12 @@ def SaveData(data):
     with open('bet.json', "w") as f:
         json.dump(data, f)
 
-data = LoadData()
-VerifyUser("João", data)
-UpdateSaldo("João", 16000, data)
-saldo = GetSaldo("João", data)
-print(saldo)
-SaveData(data)
+def VerifySaldo(nome, data):
+    global aposta
+    aposta = int(input("Quanto você vai apostar: "))
+    match = next((x for x in data if x["name"] == nome), None)
+    if aposta > match["saldo"]:
+        print("Você não tem esse dinheiro.")
+        VerifySaldo(nome, data)
+    return aposta
+
