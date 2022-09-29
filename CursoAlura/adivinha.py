@@ -1,10 +1,9 @@
-import random 
+import random
 
 tentativas = int
 nivel = 0
 numero_secreto = random.randrange(1, 101) 
 pontos = 1000
-        
 
 nivel = int(input("Digite em qual nível deseja jogar: (1) Difícil - 5 tentativas, (2) Médio - 10 tentativas, (3) Fácil - 20 tentativas: "))
 
@@ -14,8 +13,7 @@ elif nivel == 2:
     tentativas = 10
 elif nivel == 3:
     tentativas = 20
-
-            
+    
 for i in range(tentativas):
     
     print("tentativas: {} de {}".format(i+1, tentativas))
