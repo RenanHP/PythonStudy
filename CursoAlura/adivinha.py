@@ -6,7 +6,7 @@ Continue = True
 
 while Continue == True:
 
-    nome = input("Qual seu nome?: ")
+    nome = input("Qual seu nome?: ").capitalize()
     data = adivinha_function.LoadData()
     adivinha_function.VerifyUser(nome, data)
     saldo_atual = adivinha_function.GetSaldo(nome, data)
@@ -16,16 +16,20 @@ while Continue == True:
     tentativas = int
     nivel = 0
     numero_secreto = random.randrange(1, 101) 
-
-    nivel = int(input("Digite em qual nível deseja jogar: (1) Difícil - 5 tentativas, (2) Médio - 10 tentativas, (3) Fácil - 20 tentativas: "))
+    print(numero_secreto)
+    nivel = int(input("Digite em qual nível deseja jogar:\n (1) Extremo - 1 tentativa\n (2) Muito difícil - 3 tentativas\n (3) Difícil - 5 tentativas\n (4) Médio - 10 tentativas\n (5) Fácil - 20 tentativas: "))
 
     if nivel == 1:
-        tentativas = 5
+        tentativas = 1
     elif nivel == 2:
-        tentativas = 10
+        tentativas = 3
     elif nivel == 3:
-        tentativas = 20
-
+        tentativas = 5
+    elif nivel == 4:
+        tentativas = 10
+    elif nivel == 5:
+        tentativas = 20    
+    
     Loop = 1
     while True:
         
@@ -44,10 +48,14 @@ while Continue == True:
             if (chute == numero_secreto):
                 print("Acertou")
                 if nivel == 1:
-                    saldo_atual = saldo_atual + aposta * 2
+                    saldo_atual = saldo_atual + aposta * 100
                 elif nivel == 2:
-                    saldo_atual = saldo_atual + aposta * 0.3
+                    saldo_atual = saldo_atual + aposta * 25
                 elif nivel == 3:
+                    saldo_atual = saldo_atual + aposta * 2
+                elif nivel == 4:
+                    saldo_atual = saldo_atual + aposta * 0.5
+                elif nivel == 5:
                     saldo_atual = saldo_atual + aposta * 0.1
                 break
             elif (chute > numero_secreto):
