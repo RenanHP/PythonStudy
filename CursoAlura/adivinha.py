@@ -16,7 +16,6 @@ while Continue == True:
     tentativas = int
     nivel = 0
     numero_secreto = random.randrange(1, 101) 
-    print(numero_secreto)
     nivel = int(input("Digite em qual nível deseja jogar:\n (1) Extremo - 1 tentativa\n (2) Muito difícil - 3 tentativas\n (3) Difícil - 5 tentativas\n (4) Médio - 10 tentativas\n (5) Fácil - 20 tentativas: "))
 
     if nivel == 1:
@@ -54,9 +53,9 @@ while Continue == True:
                 elif nivel == 3:
                     saldo_atual = saldo_atual + aposta * 2
                 elif nivel == 4:
-                    saldo_atual = saldo_atual + aposta * 0.5
+                    saldo_atual = saldo_atual + aposta * 0.05
                 elif nivel == 5:
-                    saldo_atual = saldo_atual + aposta * 0.1
+                    saldo_atual = saldo_atual + aposta * 0.02
                 break
             elif (chute > numero_secreto):
                 print("Seu chute foi maior que o número")
