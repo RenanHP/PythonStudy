@@ -36,3 +36,15 @@ def VerifySaldo(nome, data):
         VerifySaldo(nome, data)
     return aposta
 
+def GetPremio(aposta):
+    global PremioCase1
+    global PremioCase2
+    global PremioCase3
+    global PremioCase4
+    global PremioCase5
+
+    PremioCase1 = aposta * 100
+    PremioCase2 = aposta * 25
+    PremioCase3 = aposta * 2
+    PremioCase4 = aposta * 0.05
+    PremioCase5 = aposta * 0.02

@@ -12,11 +12,11 @@ while Continue == True:
     saldo_atual = adivinha_function.GetSaldo(nome, data)
     print("Bem vindo {}, seu saldo atual é de {}".format(nome, saldo_atual))
     aposta = adivinha_function.VerifySaldo(nome, data)
-
+    adivinha_function.GetPremio(aposta)
     tentativas = int
     nivel = 0
     numero_secreto = random.randrange(1, 101) 
-    nivel = int(input("Digite em qual nível deseja jogar:\n (1) Extremo - 1 tentativa\n (2) Muito difícil - 3 tentativas\n (3) Difícil - 5 tentativas\n (4) Médio - 10 tentativas\n (5) Fácil - 20 tentativas: "))
+    nivel = int(input("Digite em qual nível deseja jogar:\n (1) Extremo - 1 tentativa - Prêmio = {} \n (2) Muito difícil - 3 tentativas - Prêmio = {}\n (3) Difícil - 5 tentativas - Prêmio = {}\n (4) Médio - 10 tentativas - Prêmio = {}\n (5) Fácil - 20 tentativas - Prêmio = {} : ".format(adivinha_function.PremioCase1, adivinha_function.PremioCase2, adivinha_function.PremioCase3, adivinha_function.PremioCase4, adivinha_function.PremioCase5)))
 
     if nivel == 1:
         tentativas = 1
@@ -80,6 +80,3 @@ while Continue == True:
             Continue = False
         elif YouN == "Y":
             Continue = True
-    
-            
-
