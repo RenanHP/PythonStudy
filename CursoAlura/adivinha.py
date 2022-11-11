@@ -4,11 +4,16 @@ import random
 
 Continue = True
 
-while Continue == True:
+nome = input("Nome: ").capitalize()
+password = input("Senha: ")
+while len(password) < 8:
+    print("A senha deve conter mais de 8 caracteres.")
+    password = input("Senha: ")
+        
+while Continue == True: 
 
-    nome = input("Qual seu nome?: ").capitalize()
     data = adivinha_function.LoadData()
-    adivinha_function.VerifyUser(nome, data)
+    adivinha_function.VerifyUser(nome, password, data)
     saldo_atual = adivinha_function.GetSaldo(nome, data)
     print("Bem vindo {}, seu saldo atual é de {}".format(nome, saldo_atual))
     aposta = adivinha_function.VerifySaldo(nome, data)
@@ -70,13 +75,7 @@ while Continue == True:
     adivinha_function.SaveData(data)
     print("Fim")
     YouN = input("Deseja jogar novamente? [Y/N]: ").upper() 
+    while YouN != "Y" and YouN != "N":
+        YouN = input("Erro! Digite Y ou N: ").upper()
     if YouN == "N":
         Continue = False
-    elif YouN == "Y":
-        Continue = True
-    elif YouN != "Y" and YouN != "N" :
-        YouN = input("Erro! Digite Y ou N: ")
-        if YouN == "N":
-            Continue = False
-        elif YouN == "Y":
-            Continue = True

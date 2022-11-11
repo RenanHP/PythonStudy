@@ -4,11 +4,16 @@ def LoadData ():
     with open('bet.json') as f:
         return json.load(f)
 
-def VerifyUser(nome, data):
+def VerifyUser(nome, password, data):
     match = next((x for x in data if x["name"] == nome), None)
     if match == None:
-        data.append({"name":nome, "saldo":1000}) 
+        data.append({"name":nome, "saldo":1000 , "password":password}) 
         print("Jogador adicionado, seu saldo é de 1000R$.")
+    elif password == match["password"]:
+        pass
+    elif password != match["password"]:
+        while password != match["password"]:
+            password = input("Senha errada, tente novamente: ")        
 
 def GetSaldo (nome, data):
     match = next((x for x in data if x["name"] == nome), None)
@@ -16,7 +21,6 @@ def GetSaldo (nome, data):
     if match != None:
         resultado = match["saldo"]
     return resultado
-    
     
 def UpdateSaldo(nome, saldo, data):
     match = next((x for x in data if x["name"] == nome), None)
@@ -42,7 +46,6 @@ def GetPremio(aposta):
     global PremioCase3
     global PremioCase4
     global PremioCase5
-
     PremioCase1 = aposta * 100
     PremioCase2 = aposta * 25
     PremioCase3 = aposta * 2
