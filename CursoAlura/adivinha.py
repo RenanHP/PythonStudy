@@ -1,14 +1,15 @@
 import json
 import adivinha_function
 import random
+import getpass
 
 Continue = True
 
 nome = input("Nome: ").capitalize()
-password = input("Senha: ")
+password = getpass.getpass()
 while len(password) < 8:
     print("A senha deve conter mais de 8 caracteres.")
-    password = input("Senha: ")
+    password = getpass.getpass()
         
 while Continue == True: 
 
